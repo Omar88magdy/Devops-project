@@ -1,0 +1,41 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Check if Docker is installed
+      command: docker --version
+      register: docker_version
+      ignore_errors: yes  # Ignore error if Docker is not installed
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+      when: docker_version.rc != 0  # Only install if Docker is not found
+
+    - name: Ensure Docker is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Check if Docker image exists locally
+      command: docker images -q omar88/flask-app:v1
+      register: docker_image_exists
+      ignore_errors: yes  # Ignore error if image does not exist
+
+    - name: Pull Docker image from Docker Hub
+      docker_image:
+        name: "omar88/flask-app:v1"
+        source: pull
+      when: docker_image_exists.rc != 0  # Only pull if the image is not found
+
+    - name: Run the Docker container
+      docker_container:
+        name: app_container
+        image: "omar88/flask-app:v1"
+        state: started
+        ports:
+          - "5000:5000"  # Adjust port as necessary
+      when: docker_image_exists.rc == 0  # Run container only if image exists
