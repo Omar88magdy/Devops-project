@@ -1,19 +1,18 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/images-2-removebg-preview.png" alt="Logo" width="80" height="80">
+    <img src="images/DevOps-Lifecycle-Photoroom.png" alt="Logo" width="250" height="150">
   </a>
 
-  <h3 align="center">Automated google maps scraper</h3>
+  <h3 align="center">Automated Devops Lifecycle</h3>
 
   <p align="center">
-    Mainstream your scraping process
+    Mainstream your deployment
     <br />
   </p>
 </div>
 
 
-# Devops-project
 Demo project including most of devops tools and technologies
 📈 CI/CD Pipeline
 
@@ -50,13 +49,10 @@ Week 4:
 	•	Documentation finalized.
 
 
-👨‍💻 Contributing
-
-We welcome contributions! Please fork this repository and open a pull request to propose changes.
 
 📧 Contact
 
-For any questions or feedback, feel free to reach out to [Your Name] at your-email@example.com.
+For any questions or feedback, feel free to reach out 
 
 Enjoy automating your deployments! 😊
 
