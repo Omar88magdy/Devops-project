@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/DevOps-Lifecycle-Photoroom.png" alt="Logo" width="250" height="150">
+    <img src="images/DevOps-Lifecycle-Photoroom.png" alt="Logo" width="220" height="150">
   </a>
 
   <h3 align="center">Automated Devops Lifecycle</h3>
