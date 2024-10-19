@@ -20,20 +20,9 @@
         state: started
         enabled: yes
 
-    - name: Check if Docker image exists locally
-      command: docker images -q omar88/flask-app:v1
-      register: docker_image_exists
-      ignore_errors: yes  # Ignore error if image does not exist
-
-    - name: Remove the existing Docker image if it exists
-      docker_image:
-        name: "omar88/flask-app:v1"
-        state: absent  # Remove the image if it exists
-      when: docker_image_exists.stdout != ""  # Only remove if the image exists
-
     - name: Pull Docker image from Docker Hub
       docker_image:
-        name: "omar88/flask-app:v1"
+        name: "omar88/flask-app:latest"
         source: pull
 
     # New Stage: Remove the existing container before running a new one
@@ -46,7 +35,7 @@
     - name: Run the Docker container
       docker_container:
         name: app_container
-        image: "omar88/flask-app:v1"
+        image: "omar88/flask-app:latest"
         state: started
         ports:
           - "5000:5000"  # Adjust port as necessary
