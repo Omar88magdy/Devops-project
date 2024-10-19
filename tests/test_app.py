@@ -11,7 +11,7 @@ class FlaskAppTests(unittest.TestCase):
         """Test the home route."""
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)  # Check for a successful response
-        self.assertIn(b'Hello from asdjahfbahsbfuahfbauishfauihsbfaiusfaujsfbasfuaibfiuasbf!', response.data)  # Check the presence of the heading
+        self.assertIn(b'Devops lifecyvle automation', response.data)  # Check the presence of the heading
         self.assertIn(b'Welcome to my awesome Flask application running in Docker.', response.data)  # Check the welcome message
         self.assertIn(b'Feel free to explore!', response.data)  # Check the additional message
 
