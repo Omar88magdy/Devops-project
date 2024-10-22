@@ -39,7 +39,7 @@ html_template = """
 </head>
 <body>
     <div class="container">
-        <h1>Devops lifecyvle automation</h1>
+        <h1>Devops lifecycle automation</h1>
         <p>Welcome to my awesome Flask application running in Docker.</p>
         <p>Feel free to explore!</p>
     </div>
